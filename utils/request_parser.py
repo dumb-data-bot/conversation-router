@@ -3,9 +3,8 @@
 # Licence: Apache Licence 2.0
 
 
-def parse_messenger_request(req):
-    return None, None
-
-
 def parse_backend_request(req):
-    return None, None
+    session = req['session']
+    event = req['event']
+    parameters = req['parameters']
+    return session, event, parameters

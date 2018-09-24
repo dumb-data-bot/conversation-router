@@ -3,18 +3,17 @@
 # Licence: Apache Licence 2.0
 
 from abc import ABC, abstractmethod
-from contextlib import contextmanager
 from enum import Enum
 
 
-class BotClientType(Enum):
-    MESSENGER = 'messenger'
+class LanguageProcessorType(Enum):
+    DIALOGFLOW = 'DialogFlow'
 
 
-class BotClient(ABC):
+class LanguageProcessor(ABC):
 
-    def __init__(self, client_type: BotClientType):
-        self.client_type = client_type
+    def __init__(self, processor_type: LanguageProcessorType):
+        self.processor_type = processor_type
 
     def __enter__(self):
         return self
@@ -24,8 +23,4 @@ class BotClient(ABC):
 
     @abstractmethod
     def post(self, session, payload):
-        pass
-
-    @abstractmethod
-    def parse(self, req):
         pass

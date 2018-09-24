@@ -1,0 +1,15 @@
+runtime: python
+env: flex
+service: default
+threadsafe: true
+entrypoint: gunicorn router:app --bind :$PORT --log-level DEBUG
+
+runtime_config:
+  python_version: 3.6
+
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 0.5
+  memory_gb: 0.5
+  disk_size_gb: 10
