@@ -1,6 +1,6 @@
 PyYAML
-gunicorn==19.9.0
 requests==2.18.4
 flask==0.12.3
 dialogflow
-google-api-python-client
+pika
+pandas
